@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/head.ejs') %>
+<body>
+  <%- include('./partial/nav.ejs') %>
+  <main>
+    <div class="hero">
+      <div class="overlay">
+        <div class="text-center leading-10">
+          <h2 class="text-6xl">Book Events Seamlessly</h2>
+          <p class="text-2xl">Book, and Enjoy Events in Just a Few Clicks</p>
+          <a href="/create">
+            <button class="bg-red-700 p-1 rounded-lg w-52">Book Events Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="all">Event Details</h2>
+      <div class="max-w-5xl mx-auto flex items-center justify-center">
+        <div class="mb-8 event">
+              <h4 class="event-name"><%= event.title %></h4>
+              <hr>
+              <p class="my-3"><b>Tell me more:</b> <%= event.description %></p>
+              <hr>
+              <p class="my-3"><b>When is it happening: </b><%= new Date(event.date).toLocaleDateString() %></p>
+              <hr>
+              <p class="my-3"> <b>Where:</b> <%= event.location %></p>
+              <hr>
+              <div class="flex justify-end items-center mt-3">
+                <p><%= event.price %></p>
+              </div>
+            </div>
+          </div>
+          <a href='#'>
+            <div class='flex justify-end items-end sticky p-8'>
+              <img src="/img/arrowUp.svg" alt="arrowUp">
+            </div>
+          </a>
+        </div>
+    <%- include('./partial/footer.ejs') %>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>

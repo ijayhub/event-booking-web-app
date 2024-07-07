@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Pirata+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+/* .................nav.......................... */
+.btn-event{
+  @apply border-2 border-red-700 p-2 rounded-xl leading-10 text-lg
+}
+.nav{
+  font-family: 'Pirata One', cursive;
+}
+/* ...................................hero................... */
+.home{
+  font-family: 'Pirata One', cursive;
+}
+.hero {
+  background-image: url('img/cover-img-event.jpeg'); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height:480px;
+  @apply flex-col items-center justify-center; 
+  font-family: 'Pirata One', cursive;
+}
+
+.overlay{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+  background-color: rgba(21, 1, 0, 0.3);
+  height:480px;
+  @apply text-white;
+  
+}
+/* ...........................all event............ */
+.all{
+  @apply text-center text-4xl text-red-700 my-10 hover:text-purple-700 border-b-2 border-purple-700;
+  font-family: 'Pirata One', cursive; 
+}
+.event{
+  @apply max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-2xl 
+}
+.btn-read-more{
+  @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center  bg-red-700 rounded-lg hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-blue-300 text-white
+}
+.event-name{
+  @apply mb-3 text-2xl font-bold tracking-tight text-black text-center
+}
+/* ............................form................ */
+.creation{
+  font-family: 'Pirata One', cursive;
+}
+
+.label{
+  @apply block mb-2 text-lg font-medium text-black 
+}
+.input{
+  @apply border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500
+}
+/* .........about........... */
+.about{
+  font-family: 'Pirata One', cursive;
+
+}
+/* ............................about.............*/
+  .about-container{
+    @apply max-w-5xl mx-auto text-slate-900 leading-10 mb-5 
+  }
+    
+/* ..................................delete............... */
+.delete-btn{
+  @apply rounded-full shadow-2xl absolute
+}
+@media screen and (max-width: 768px){
+  .about-container, .event{
+    @apply mx-3
+  }
+  .btn-event{
+    @apply pt-2
+  }
+}

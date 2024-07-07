@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/head.ejs') %>
+<body>
+  <%- include('./partial/nav.ejs') %>
+  <main>
+    <div class="hero">
+      <div class="overlay">
+        <div class="text-center leading-10">
+          <h2 class="text-6xl">Book Events Seamlessly</h2>
+          <p class="text-2xl">Book, and Enjoy Events in Just a Few Clicks</p>
+          <a href="/create">
+            <button class="bg-red-700 p--1 rounded-lg w-64">Book Events Now</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="about-container">
+      <h2 class="text-center text-red-700 my-3 text-4xl about">
+        About Eventrix
+      </h2>
+      
+      <p>At Eventrix, we simplify event management and ticketing. Our platform helps event planners effortlessly create, promote, and manage events, from conferences to concerts. With our comprehensive tools, organizing your next event is a breeze.</p>
+      <h3 class="text-2xl mt-2 text-red-700 font-bold">Key Features:</h3>
+      <ul>
+        <ol><b>Online Event Booking:</b> Streamline ticket sales with ease.</ol>
+        <ol><b>Event Management Tools:</b> All-in-one solution for organizing events.</ol>
+        <ol><b>Attendee Management:</b>Track and manage guests efficiently.</ol>
+      </ul>
+      <p class="text-center">Experience the ease of event planning with Eventrix today!</p>
+    </div>
+      <a href='#'>
+				<div className='flex justify-end items-end sticky p-8'>
+					<img src="/img/arrowUp.svg" alt="arrowUp">
+				</div>
+			</a>
+  
+    <%- include('./partial/footer.ejs') %>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+</body>
+</html>

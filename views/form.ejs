@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partial/head.ejs') %>
+<body>
+  <%- include('./partial/nav.ejs') %>
+  <form class="my-24 max-w-5xl mx-auto" action="/event/form" method="post">
+    <h2 class="text-center text-4xl text-red-700 hover:text-purple-700 mb-14 creation">Event Creation form</h2>
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+      <div>
+        <label for="name" class="label">Event name</label>
+        <input type="text" id="name" class="input" name="title" placeholder="Tech Summit" required />
+      </div>
+      <div>
+        <label for="date" class="label">Event Date</label>
+        <input type="date" name="date" 	min="<%= new Date().toISOString().split('T')[0] %>"  id="date" class="input"  required>
+      </div>
+      <div>
+        <label for="company" class="label">Event Organizer</label>
+        <input type="text" id="company" class="input" name="organizer" placeholder="MLH" required />
+      </div>
+      <div>
+        <label for="price" class="label">Event Price</label>
+        <select name="price" id="price" class="input">
+          <option value=""></option>
+          <option value="free">Free Entry</option>
+          <option value="paid">Paid</option>
+        </select>
+      </div>
+    </div>
+    <div class="mb-6">
+      <label for="time" class="label">What time is the event?</label>
+      <input type="text" name="time" id="time" placeholder="9:00am" class="input">
+    </div>
+    <div class="mb-6">
+      <label for="location" class="label">Event Location</label>
+      <input type="text" id="location" class="input" name="location" placeholder="Lagos, Nigeria" required />
+    </div> 
+    <div>
+      <label for="message" class="label">Event Description</label>
+      <textarea name="description" id="message" cols="30" rows="10" class="input resize-none"></textarea>
+    </div>
+    <div class="flex items-start my-6">
+      <div class="flex items-center h-5">
+        <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800" required />
+      </div>
+      <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+    </div>
+    <button class="bg-red-700 hover:bg-purple-800 rounded-md text-white p-2">Create New Event</button>
+  </form>
+      <a href='#'>
+				<div class='flex justify-end items-end sticky p-8'>
+					<img src="/img/arrowUp.svg" alt="arrowUp">
+				</div>
+			</a> 
+  <%- include('./partial/footer.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  
+</body>
+</html>
