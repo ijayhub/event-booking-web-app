@@ -13,7 +13,7 @@ mongoose
 	.connect(process.env.DBURL)
 	.then((result) => {
 		console.log('connected');
-		app.listen(process.env.PORT, 'localhost', () => {
+		app.listen(process.env.PORT, () => {
 			console.log('Server working');
 		});
 	})
