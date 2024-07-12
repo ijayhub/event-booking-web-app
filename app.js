@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const eventRoutes = require('./routes/eventRoutes')
 
 
+
 // initalize the express module
 const app = express()
 

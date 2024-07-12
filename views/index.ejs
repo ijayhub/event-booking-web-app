@@ -15,30 +15,30 @@
         </div>
       </div>
     </div>
-    <div>
-      <h2 class="all">All events</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        <% if (events.length > 0) { %>
-        <% events.forEach(event => { %>
-        <div class="event mb-8">
-          <div class="flex justify-end items-center">
-            <button class="delete-btn" data-id="<%= event.id %>">
-              <img src="/img/trash.svg" alt="delete-icon">
-            </button>
+      <div>
+        <h2 class="all">All events</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <% if (events.length > 0) { %>
+          <% events.forEach(event => { %>
+          <div class="event mb-8">
+            <div class="flex justify-end items-center">
+              <button class="delete-btn" data-id="<%= event.id %>">
+                <img src="/img/trash.svg" alt="delete-icon">
+              </button>
+            </div>
+            <div>
+              <h3 class="event-name"><%= event.title %></h3>
+              <p class="mb-8"><%= event.description %></p>
+              <a href="/event/<%= event.id %>" class="btn-read-more">
+                <button type="button">Click to read details about event</button>
+              </a>
+            </div>
           </div>
-          <div>
-            <h3 class="event-name"><%= event.title %></h3>
-            <p class="mb-8"><%= event.description %></p>
-            <a href="/event/<%= event.id %>" class="btn-read-more">
-              <button type="button">Click to read details about event</button>
-            </a>
-          </div>
+          <% }) %>
+          <% } else { %>
+          <p class="mb-4 text-center text-2xl">No events available at the moment.</p>
+          <% } %>
         </div>
-        <% }) %>
-        <% } else { %>
-        <p class="mb-4 text-center text-2xl">No events available at the moment.</p>
-        <% } %>
-      </div>
       </div>
       <a href='#'>
 				<div class='flex justify-end items-end sticky p-8'>
