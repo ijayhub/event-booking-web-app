@@ -25,7 +25,7 @@ mongoose
 // define the template 
 app.set('view engine', 'ejs')
 
-// middleware
+// middleware amd static file
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 

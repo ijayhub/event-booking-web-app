@@ -1,53 +1,25 @@
 const mongoose = require("mongoose")
-const Event = require('../models/Events');
 const express = require('express');
+const eventcontroller = require('../controllers/eventcontroller')
 
 const router = express.Router();
 
 
 // navigation route
-router.get('/', (req, res) => {
-  Event.find()
-    .then((result) => {
-      res.render('index', { title: 'All event', events: result })
-    })
-    .catch((err) => {
-      console.error(err); 
-  })
-})
+router.get('/', eventcontroller.getAllEvent)
+router.get('/about', eventcontroller.getAboutEvent)
+router.get('/create', eventcontroller.getFormEvent)
 
-router.get('/about', (req, res) => {
-	res.render('about', { title: 'About Eventrix' });
-})
 
-router.get('/create', (req, res) => {
-  res.render('form', { title: 'Add a New Event' })
-})
+
+
+
+
 // form routes
-router.post('/event/form', (req, res) => {
-  const event = new Event(req.body)
-  event.save()
-    .then((result) => {
-      res.redirect('/') 
-      
-    })
-    .catch((err) => {
-      console.error(err);
-  })
-})
+router.post('/', eventcontroller.getFormPostEvent)
 
 // delete an event
-// router.delete('/event/:id', (req, res) => {
-// 	const id = req.params.id;
-// 	Event.findByIdAndDelete(id)
-// 		.then((result) => {
-// 			res.json({ redirect: '/' });
-// 		})
-// 		.catch((err) => {
-// 			console.error(err);
-// 			res.status(500).json({ error: 'Failed to delete event' });
-// 		});
-// });
+router.delete('/event/:id', eventcontroller.deleteEvent)
 
 // detail of the event
 
